@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      position: relative;
+
+    }
+    .box::before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 60px;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: #c00;
+      border-radius: 2px;
+      transition: 0.8s;
+      -webkit-animation: box .8s infinite;
+    }
+    .box::after{
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 128px;
+      left: 52px;
+      width: 44px;
+      height: 3px;
+      background: #eaeaea;
+      border-radius: 100%;
+      /* 阴影放大缩小效果 */ 
+      -webkit-animation: box1 .8s infinite;
+    }
+    @-webkit-keyframes box{
+      0%{
+        top: 50px;
+        transform: rotate(0deg);
+      }
+      25%{
+        border-radius: 2px;
+      }
+      50%{
+        top: 75px;
+        border-bottom-right-radius: 10px;
+        transform: rotate(45deg);
+      }
+      75%{
+        border-radius: 2px;
+      }
+      100%{
+        top: 50px;
+        transform: rotate(90deg);
+      }
+    }
+    @-webkit-keyframes box1{
+      0%{
+        transform: scale(1.0);
+        height: 3px;
+      }
+      50%{
+        transform: scale(1.2);
+        height: 5px;
+      }
+      100%{
+        transform: scale(1.0);
+        height: 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+  </div>
+</body>
+</html>
